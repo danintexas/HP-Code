@@ -1,0 +1,12 @@
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.exe.config
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.exe
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.pdb
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.csprojResolveAssemblyReference.cache
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.exe
+C:\Files\My Files\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.pdb
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.exe.config
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.exe
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.pdb
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\obj\Debug\Core_BIOS_Automation_Tool.csprojResolveAssemblyReference.cache
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.exe
+C:\Files\Visual Studio Projects\Core_BIOS_Automation_Tool\Core_BIOS_Automation_Tool\bin\Debug\Core_BIOS_Automation_Tool.pdb
