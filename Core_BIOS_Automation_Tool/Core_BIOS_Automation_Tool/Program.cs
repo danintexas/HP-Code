@@ -6,11 +6,11 @@
  * Ver 1.9
  * 
  * Core BIOS Automation Team Members
- * Daniel Gail - Main program designer - daniel.gail@hp.com
- * Swathi Maryada - swathi.maryada@hp.com
+ * ---Redacted---
+ * ---Redacted---
  * 
  * Main HP Contact
- * Ziwen Jiao - zjiao@hp.com
+ * ---Redacted---
  * 
  */
 #endregion
