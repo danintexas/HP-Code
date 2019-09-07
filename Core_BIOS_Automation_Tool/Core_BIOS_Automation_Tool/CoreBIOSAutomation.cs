@@ -1,21 +1,17 @@
-﻿#region"Core_BIOS_Automation_Tool.exe"
-/* Core_BIOS_Automation_Tool.exe
+﻿/* Core_BIOS_Automation_Tool.exe
  * This program is designed to work in conjunction with the Core BIOS WinPVT scripts. No other method of execution
  * is supported.
  * 
- * Ver 1.9
+ * Ver 2.0
  * 
  * Core BIOS Automation Team Members
  * ---Redacted---
  * ---Redacted---
  * 
  * Main HP Contact
- * ---Redacted---
- * 
+ * ---Redacted--- 
  */
-#endregion
 
-#region"Argument Triggers"
 /* Argument Triggers - args[0]
 *      Ver
 *          WinPVT Version Check
@@ -40,9 +36,7 @@
 *      WMIS 
 *           Method for the main WMI Stress test
 */
-#endregion
 
-#region"Change Log"
 /* Change Log
  * 1.0 
  *     6-18 SMBIOS Data Verification - Daniel     
@@ -68,26 +62,22 @@
  *     WMIS - Added the argument for WMI Stress test - Daniel
  *     613 - Added 613 argument for the 6-13 BIOS Scheduled Power-On test
  * 1.8
- *     613 - Added '613 1' argument to calculate time till next sunday
- *     
+ *     613 - Added '613 1' argument to calculate time till next sunday     
  * 1.9  
  *     Time: Added '3' argument to check for a >= 10 min difference
+ * 2.0
+ *     Final Refactoring pass
  */
-#endregion
-
-
+ 
 using System;
 using System.IO;
 
 namespace Core_BIOS_Automation_Tool
 {
-
-   class Program
+   class CoreBIOSAutomation
    {
-        #region"Main"
         static void Main(string[] args)
        {
-            #region "End Application if no arguments passed to it"
             // Display a message if someone runs this application by itself
             if (args.Length == 0)
             {
@@ -102,85 +92,59 @@ namespace Core_BIOS_Automation_Tool
                     Environment.NewLine + "PRESS [ENTER] TO CLOSE THIS APPLICATION");
                 Console.ReadLine();
 
-                Environment.Exit(0);    // Shut down the application
+                Environment.Exit(0);    
             }
-            #endregion
 
-            #region"Create Core_BIOS_Automation_Tool folder"
             // Create the Core_BIOS_Automation_Tool folder if it is not there
             if (args.Length > 0 && !Directory.Exists(@"c:\Core_BIOS_Automation_Tool"))
             {
                 System.IO.Directory.CreateDirectory(@"c:\Core_BIOS_Automation_Tool");
             }
-            #endregion
 
-            #region "Win PVT Version Check"
             // Win PVT Version check
             if (args[0] == "Ver")
-                Tests.Test_Ver(); // Calls the Test_Ver method from the Tests class
-            #endregion
+                Tests.Test_Ver(); 
 
-            #region "Platform Year Check"
             // Year detection
             if (args[0] == "Year")
-                Tests.Test_Year(args);  // Calls the Test_Year method from the Tests class
-            #endregion
+                Tests.Test_Year(args); 
 
-            #region "Arduino Detect"
             // Arduino Detection
             if (args[0] == "Ard")
-                Tests.Test_Ard(); // Calls the Test_Ard method from the Tests class
-            #endregion
+                Tests.Test_Ard();
 
-            #region "3-3 Secure Boot Key Management"
             // 3-3 Secure Boot Management
             if (args[0].Substring(0, 2) == "33")
-                Tests.Test_33(args); // Calls the Test_33 method from the Tests class
-            #endregion
+                Tests.Test_33(args);
 
-            #region"5-52 LINUX REPSETUP UTILITY"
             // 5-52 LINUX REPSETUP UTILITY
             if (args[0].Substring(0, 3) == "552")
-               Tests.Test_552(args); // Calls the Test_552 method from the Tests class
-            #endregion
+               Tests.Test_552(args); 
 
-            #region "6-13 BIOS Scheduled Power-On WMI"
             // 6-13 BIOS Scheduled Power-On WMI
             if (args[0].Substring(0, 3) == "613")
-                Tests.Test_613(args); // Calls the Test_613 method from the Tests case
-            #endregion
+                Tests.Test_613(args); 
 
-            #region "6-18 SMBIOS Data Verification"
             // 6-18 SMBIOS Data Verification
             if (args[0].Substring(0, 3) == "618")
-               Tests.Test_618(args); // Calls the Test_618 method from the Tests class
-            #endregion
+               Tests.Test_618(args);
 
-            #region "14-3 F10 setting for Firebird policies"
             // 14-3 F10 setting for Firebird policies
             if (args[0].Substring(0, 3) == "143")
-                Tests.Test_143(args); // Calls the Test_143 method from the Tests class
-            #endregion
+                Tests.Test_143(args); 
 
-            #region "Parse a Keyword"
             // Parse a log for a keyword
             if (args[0] == "Parse")
                 Tests.Test_Parse(args);
-            #endregion
 
-            #region "Time"
             // Reports current system time
             if (args[0] == "Time")
                 Tests.Test_Time(args);
-            #endregion
 
-            #region "WMI Stress"
             // Calls for the WMI Stress method
             if (args[0] == "WMIS")
                 Tests.Test_WMIS(args);
-            #endregion
 
-            #region "Final catch all for arguments not covered"
             // Final catch all for arguments not covered
             else if (args[0] != null)
             {
@@ -191,12 +155,10 @@ namespace Core_BIOS_Automation_Tool
                     Environment.NewLine + "PRESS [ENTER] TO CLOSE THIS APPLICATION");
                 Console.ReadLine();
 
-                Environment.Exit(0);    // Shut down the application
+                Environment.Exit(0);    
             }
-           #endregion
 
-           Environment.Exit(0);    // Shut down the application
+           Environment.Exit(0);    
        }
-        #endregion
     }
 }
