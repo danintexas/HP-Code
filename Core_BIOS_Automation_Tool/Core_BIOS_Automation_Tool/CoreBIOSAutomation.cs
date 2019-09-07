@@ -98,7 +98,7 @@ namespace Core_BIOS_Automation_Tool
             // Create the Core_BIOS_Automation_Tool folder if it is not there
             if (args.Length > 0 && !Directory.Exists(@"c:\Core_BIOS_Automation_Tool"))
             {
-                System.IO.Directory.CreateDirectory(@"c:\Core_BIOS_Automation_Tool");
+                Directory.CreateDirectory(@"c:\Core_BIOS_Automation_Tool");
             }
 
             // Win PVT Version check
@@ -131,15 +131,17 @@ namespace Core_BIOS_Automation_Tool
 
             // 14-3 F10 setting for Firebird policies
             if (args[0].Substring(0, 3) == "143")
-                Tests.Test_143(args); 
+                Tests.Test_143(args);
 
             // Parse a log for a keyword
             if (args[0] == "Parse")
-                Tests.Test_Parse(args);
+            {
+                Tests.Parse.Test_Parse(args);
+            }                
 
             // Reports current system time
             if (args[0] == "Time")
-                Tests.Test_Time(args);
+                Tests.Time.Test_Time(args);
 
             // Calls for the WMI Stress method
             if (args[0] == "WMIS")

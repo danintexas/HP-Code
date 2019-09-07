@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Core_BIOS_Automation_Tool
 {
-    public class Tests
+    public class Testss
     {
         #region "Win PVT Version check"
 
@@ -3962,60 +3960,6 @@ namespace Core_BIOS_Automation_Tool
         }
         #endregion
 
-        #region "Parse a logfile"
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /* Parse a logfile
-         * 
-         *      Arguments Expected
-         *      0: Parse
-         *      1: Keyword or phrase to look for
-         *      2: Filename to parse
-         * 
-        */
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void Test_Parse(string[] args)
-        {
-            if (File.Exists(@"c:\Core_BIOS_Automation_Tool\" + args[2]))
-            {
-                // Read log file line by line and put into an array
-                string[] fileLines = System.IO.File.ReadAllLines(@"c:\Core_BIOS_Automation_Tool\" + args[2]);
-
-                String write = "";
-
-                // For each array element put said line into the string 'write'
-                for (int i = 0; i < fileLines.Length; i++)
-                {
-                    // Look for the keyword or phrase and grab everything after it
-                    if (fileLines[i].Contains(args[1]))
-                    {
-                        write = (fileLines[i].Substring(fileLines[i].LastIndexOf(args[1]) + (args[1].Length + 1)));
-                    }
-                }
-
-                write = "// File parsed = " + args[2] + Environment.NewLine +
-                    "//Keyword to look for = " + args[1] + Environment.NewLine +
-                    Environment.NewLine + "KEYWORD_PARSED = " + write;
-
-                System.IO.File.WriteAllText("c:\\Core_BIOS_Automation_Tool\\Keyword_Parsed.txt", write);
-
-                Environment.Exit(0);    // Shut down the application
-            }
-
-            else // In case the file to parse isn't found
-            {
-                Console.WriteLine(Environment.NewLine + "Something happened with the WinPVT script." +
-                    Environment.NewLine + "Please rerun the script and if you continue to see this error " +
-                    "dialog" + Environment.NewLine + "you will need to write an SIO on this script." +
-                    Environment.NewLine + Environment.NewLine + @"File: c:\Core_BIOS_Automation_Tool\" + args[2] + 
-                    " Not found" + Environment.NewLine + Environment.NewLine +
-                    "Press any key to close this application and the script will fail.");
-                Console.ReadLine();
-            }
-
-            Environment.Exit(0);
-        }
-        #endregion
-
         #region"Reverse a String"
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4186,14 +4130,3 @@ namespace Core_BIOS_Automation_Tool
         #endregion
     }
 }
-
-#region"Debug code"
-//////////////////////////////////////////////////////////////////////////////
-/* Copy the below lines into any section of this application to help debug it
- 
-Console.WriteLine("This works!");
-Console.ReadLine();
- 
- */
-//////////////////////////////////////////////////////////////////////////////
-#endregion
