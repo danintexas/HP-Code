@@ -7,7 +7,6 @@ namespace Core_BIOS_Automation_Tool.Tests
     {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /*
-         * 
          * Used to grab 2 different times and calculate the difference
          * 
          *      Arguments Expected

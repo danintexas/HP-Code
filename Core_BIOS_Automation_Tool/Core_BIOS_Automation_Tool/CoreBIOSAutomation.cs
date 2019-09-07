@@ -103,7 +103,7 @@ namespace Core_BIOS_Automation_Tool
 
             // Win PVT Version check
             if (args[0] == "Ver")
-                Tests.Test_Ver(); 
+                Tests.VersionCheck.Test_Ver(); 
 
             // Year detection
             if (args[0] == "Year")
