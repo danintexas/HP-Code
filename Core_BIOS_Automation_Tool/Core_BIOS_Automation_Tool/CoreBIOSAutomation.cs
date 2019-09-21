@@ -77,22 +77,22 @@ namespace Core_BIOS_Automation_Tool
    class CoreBIOSAutomation
    {
         static void Main(string[] args)
-       {
+        {
             // Display a message if someone runs this application by itself
             if (args.Length == 0)
             {
-                Console.WriteLine("***************************************************" + Environment.NewLine + 
+                Console.WriteLine("***************************************************" + Environment.NewLine +
                     "        Core BIOS Automation Tool V 1.9" + Environment.NewLine + Environment.NewLine +
-                    "           Developed by: Daniel Gail" + Environment.NewLine + 
-                    "           Email: daniel.gail@hp.com" + Environment.NewLine + Environment.NewLine + 
+                    "           Developed by: Daniel Gail" + Environment.NewLine +
+                    "           Email: daniel.gail@hp.com" + Environment.NewLine + Environment.NewLine +
                     "***************************************************" + Environment.NewLine +
-                    Environment.NewLine + "No arguments passed to this application." + Environment.NewLine + 
-                    Environment.NewLine + "This application is designed specifically to run " + Environment.NewLine + 
+                    Environment.NewLine + "No arguments passed to this application." + Environment.NewLine +
+                    Environment.NewLine + "This application is designed specifically to run " + Environment.NewLine +
                     "in conjunction with Core BIOS Automation scripts." + Environment.NewLine + Environment.NewLine +
                     Environment.NewLine + "PRESS [ENTER] TO CLOSE THIS APPLICATION");
                 Console.ReadLine();
 
-                Environment.Exit(0);    
+                Environment.Exit(0);
             }
 
             // Create the Core_BIOS_Automation_Tool folder if it is not there
@@ -103,31 +103,45 @@ namespace Core_BIOS_Automation_Tool
 
             // Win PVT Version check
             if (args[0] == "Ver")
-                Tests.VersionCheck.Test_Ver(); 
+            {
+                Tests.VersionCheck.Test_Ver();
+            }
 
             // Year detection
             if (args[0] == "Year")
-                Tests.YearDetection.Test_Year(args); 
+            {
+                Tests.YearDetection.Test_Year(args);
+            }
 
             // Arduino Detection
             if (args[0] == "Ard")
+            {
                 Tests.ArduinoDetection.Test_Ard();
+            }
 
             // 3-3 Secure Boot Management
             if (args[0].Substring(0, 2) == "33")
-                Tests.Test_33(args);
+            {
+                Tests.SecureBoot.Test_33(args);
+            }
 
             // 5-52 LINUX REPSETUP UTILITY
             if (args[0].Substring(0, 3) == "552")
-               Tests.Test_552(args); 
+            {
+                Tests.LinuxRepsetupUtility.Test_552(args);
+            }
 
             // 6-13 BIOS Scheduled Power-On WMI
             if (args[0].Substring(0, 3) == "613")
-                Tests.Test_613(args); 
+            {
+                Tests.BIOSScheduledPowerOnWMI.Test_613(args);
+            } 
 
             // 6-18 SMBIOS Data Verification
             if (args[0].Substring(0, 3) == "618")
-               Tests.Test_618(args);
+            {
+                Tests.SMBIOSDataVerification.Test_618(args);
+            }
 
             // 14-3 F10 setting for Firebird policies
             if (args[0].Substring(0, 3) == "143")
@@ -137,15 +151,19 @@ namespace Core_BIOS_Automation_Tool
             if (args[0] == "Parse")
             {
                 Tests.Parse.Test_Parse(args);
-            }                
+            }
 
             // Reports current system time
             if (args[0] == "Time")
+            {
                 Tests.Time.Test_Time(args);
+            }
 
             // Calls for the WMI Stress method
             if (args[0] == "WMIS")
-                Tests.Test_WMIS(args);
+            {
+                Tests.WMIStress.Test_WMIS(args);
+            }
 
             // Final catch all for arguments not covered
             else if (args[0] != null)
@@ -157,7 +175,7 @@ namespace Core_BIOS_Automation_Tool
                     Environment.NewLine + "PRESS [ENTER] TO CLOSE THIS APPLICATION");
                 Console.ReadLine();
 
-                Environment.Exit(0);    
+                Environment.Exit(0);
             }
 
            Environment.Exit(0);    
