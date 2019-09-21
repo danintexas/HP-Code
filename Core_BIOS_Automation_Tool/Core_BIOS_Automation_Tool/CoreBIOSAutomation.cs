@@ -107,11 +107,11 @@ namespace Core_BIOS_Automation_Tool
 
             // Year detection
             if (args[0] == "Year")
-                Tests.Test_Year(args); 
+                Tests.YearDetection.Test_Year(args); 
 
             // Arduino Detection
             if (args[0] == "Ard")
-                Tests.Test_Ard();
+                Tests.ArduinoDetection.Test_Ard();
 
             // 3-3 Secure Boot Management
             if (args[0].Substring(0, 2) == "33")
