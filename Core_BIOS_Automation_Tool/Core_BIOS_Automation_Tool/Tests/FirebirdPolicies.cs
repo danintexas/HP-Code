@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 
-namespace Core_BIOS_Automation_Tool
+namespace Core_BIOS_Automation_Tool.Tests
 {
-    public class Testss
+    public class FirebirdPolicies
     {
-        #region "14-3 F10 setting for Firebird policies"
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /* 14-3 F10 setting for Firebird policies method
          * 
@@ -19,7 +18,6 @@ namespace Core_BIOS_Automation_Tool
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static void Test_143(string[] args)
         {
-            #region"Time argument"
             // This section will check the Restart &Time Calculation.log file located in the c:\Core_BIOS_Automation_Tool
             //  folder and parse that log for two values:
             //      TESTINPUT_TIMEBEFORE = #VALUE
@@ -31,7 +29,7 @@ namespace Core_BIOS_Automation_Tool
                 if (File.Exists(@"c:\Core_BIOS_Automation_Tool\Restart & Time Calculation.log"))
                 {
                     // Read log file line by line and put into an array
-                    string[] fileLines = System.IO.File.ReadAllLines(@"c:\Core_BIOS_Automation_Tool\Restart & Time Calculation.log");
+                    string[] fileLines = File.ReadAllLines(@"c:\Core_BIOS_Automation_Tool\Restart & Time Calculation.log");
 
                     int difference = 0, before = 0, after = 0;
 
@@ -58,9 +56,9 @@ namespace Core_BIOS_Automation_Tool
                         Environment.NewLine + "//Difference is: " + difference + Environment.NewLine +
                         "TIME_DIFFERENCE = " + difference;
 
-                    System.IO.File.WriteAllText("c:\\Core_BIOS_Automation_Tool\\Restart_Difference.txt", write);
+                    File.WriteAllText("c:\\Core_BIOS_Automation_Tool\\Restart_Difference.txt", write);
 
-                    Environment.Exit(0);    // Shut down the application
+                    Environment.Exit(0);   
                 }
 
                 else                // File not found
@@ -73,12 +71,11 @@ namespace Core_BIOS_Automation_Tool
                     "Press any key to close this application and the script will fail.");
                     Console.ReadLine();
 
-                    Environment.Exit(0);    // Shut down the application
+                    Environment.Exit(0);  
                 }
             }
-            #endregion
 
-            #region"Error Argument"
+
             if (args[0] == "143Log")
             {
                 // Variables needed for logging
@@ -100,7 +97,7 @@ namespace Core_BIOS_Automation_Tool
                 // Adjust wmi settings depending on test
                 switch (Convert.ToInt32(args[1]))
                 {
-                    #region"1 @ a Time"
+                    // 1 @ a Time Region
                     case 1:
                         {
                             test = "1 @ a Time";
@@ -156,9 +153,8 @@ namespace Core_BIOS_Automation_Tool
                             test = "1 @ a Time";
                             break;
                         }
-                    #endregion
 
-                    #region"2 @ a Time"
+                    // 2 @ a Time Region
                     case 9:
                         {
                             test = "2 @ a Time";
@@ -381,9 +377,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_one = "Enable";
                             break;
                         }
-                    #endregion
 
-                    #region"3 @ a Time"
+                    // 3 @ a Time Region
                     case 37:
                         {
                             test = "3 @ a Time";
@@ -887,9 +882,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_three = "Disable";
                             break;
                         }
-                    #endregion
 
-                    #region"4 @ a Time"
+                    // 4 @ a Time Region
                     case 93:
                         {
                             test = "4 @ a Time";
@@ -1588,9 +1582,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_eight = "Enable";
                             break;
                         }
-                    #endregion
 
-                    #region"5 @ a Time"
+                    // 5 @ a Time Region
                     case 163:
                         {
                             test = "5 @ a Time";
@@ -2207,9 +2200,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_eight = "Enable";
                             break;
                         }
-                    #endregion
 
-                    #region"6 @ a Time"
+                    // 6 @ a Time Region
                     case 219:
                         {
                             test = "6 @ a Time";
@@ -2545,9 +2537,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_eight = "Enable";
                             break;
                         }
-                    #endregion
 
-                    #region"7 @ a Time"
+                    // 7 @ a Time Region
                     case 247:
                         {
                             test = "7 @ a Time";
@@ -2651,9 +2642,8 @@ namespace Core_BIOS_Automation_Tool
                             wmi_seven = "Log event only";
                             break;
                         }
-                    #endregion
 
-                    #region"8 @ a Time"
+                    // 8 @ a Time Region
                     case 255:
                         {
                             test = "8 @ a Time";
@@ -2667,26 +2657,22 @@ namespace Core_BIOS_Automation_Tool
                             wmi_eight = "Enable";
                             break;
                         }
-                    #endregion
 
-                    #region"Default"
+                    // Default
                     default:
                         {
                             Console.WriteLine(Environment.NewLine + "Something happened with the WinPVT script." +
-                    Environment.NewLine + "Please rerun the script and if you continue to see this error " +
-                    "dialog" + Environment.NewLine + "you will need to write an SIO on this script." +
-                    Environment.NewLine + Environment.NewLine +
-                    "Press any key to close this application and the script will fail.");
-                            Console.ReadLine();
+                                Environment.NewLine + "Please rerun the script and if you continue to see this error " +
+                                "dialog" + Environment.NewLine + "you will need to write an SIO on this script." +
+                                Environment.NewLine + Environment.NewLine +
+                                "Press any key to close this application and the script will fail.");
+                                        Console.ReadLine();
 
                             Environment.Exit(0);
                             break;
                         }
-                        #endregion
-
                 }
 
-                #region"Print out Logs"
                 // Print out current test
                 if (args[3] == "Flip")
                 {
@@ -2771,11 +2757,8 @@ namespace Core_BIOS_Automation_Tool
 
                     Environment.Exit(0);
                 }
-                #endregion
             }
-            #endregion
 
-            #region"Invalid Argument"
             else                                                
             {
                 Console.WriteLine(Environment.NewLine + "Something happened with the WinPVT script." +
@@ -2785,10 +2768,8 @@ namespace Core_BIOS_Automation_Tool
                     "Press any key to close this application and the script will fail.");
                 Console.ReadLine();
             }
-            #endregion
 
             Environment.Exit(0);
         }
-        #endregion        
     }
 }

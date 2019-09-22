@@ -145,7 +145,9 @@ namespace Core_BIOS_Automation_Tool
 
             // 14-3 F10 setting for Firebird policies
             if (args[0].Substring(0, 3) == "143")
-                Tests.Test_143(args);
+            {
+                Tests.FirebirdPolicies.Test_143(args);
+            }
 
             // Parse a log for a keyword
             if (args[0] == "Parse")

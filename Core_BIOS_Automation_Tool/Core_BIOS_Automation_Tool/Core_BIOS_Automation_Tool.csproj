@@ -86,10 +86,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Tests.cs" />
+    <Compile Include="Tests\BIOSScheduledPowerOnWMI.cs" />
+    <Compile Include="Tests\LinuxRepsetupUtility.cs" />
+    <Compile Include="Tests\Reverse.cs" />
+    <Compile Include="Tests\SecureBoot.cs" />
+    <Compile Include="Tests\ArduinoDetection.cs" />
     <Compile Include="Tests\Parse.cs" />
+    <Compile Include="Tests\SMBIOSDataVerification.cs" />
+    <Compile Include="Tests\FirebirdPolicies.cs" />
     <Compile Include="Tests\Time.cs" />
     <Compile Include="Tests\VersionCheck.cs" />
+    <Compile Include="Tests\WMIStress.cs" />
+    <Compile Include="Tests\YearDetection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
